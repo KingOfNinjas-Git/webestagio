@@ -1,0 +1,1056 @@
+@font-face {
+  font-family: "GothamBold";
+  src: url("../fonts/GothamHTF/GothamHTF-Bold.woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "GothamMedium";
+  src: url("../fonts/GothamHTF/Gotham-Medium.woff2");
+  font-weight: medium;
+}
+
+.main {
+  margin: 0;
+  height: 100vh;
+  background-image: url(imgs/Mask\ Group\ 1@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 100%;
+  font-family: "Raleway";
+  font-weight: medium;
+}
+
+.logo {
+  background-color: transparent;
+  width: 159px;
+  height: 132px;
+}
+
+.navigation {
+  background-color: #000;
+  width: 368px;
+  height: 67px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.separador {
+  border-left: 1px solid white;
+  height: 26px;
+}
+
+.sabonete {
+  color: white;
+  font-size: 81px;
+  font-weight: 700;
+  display: flex;
+  height: 421px;
+  width: 668px;
+  font-family: "GothamBold";
+}
+
+.sabonete-text {
+  color: white;
+  font-size: 50px;
+  font-style: normal;
+  width: 392px;
+  height: 253px;
+  font-family: "Raleway";
+  font-weight: 100;
+}
+
+.menu-close {
+  display: none;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.menu-icon span {
+  width: 22px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.produtos-title {
+  font-size: 100px;
+  font-weight: 700;
+  font-family: "GothamBold";
+  color: #2e606f;
+  text-align: right;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.title-anossa {
+  margin-right: 340px;
+  font-family: "GothamBold";
+}
+
+.title-colecao {
+  margin-right: 99px;
+}
+
+.product-container {
+  /* Class dos Containers todos */
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  margin: 20px auto;
+  margin-bottom: 75px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: white;
+}
+
+.yellow-sabonete {
+  /* Class da imagem dos Containers */
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-text {
+  /* Class que abrange todo o text nas containers */
+  flex: 1;
+  color: #000;
+  text-align: left;
+  max-width: 100%;
+}
+
+.product-text h2 {
+  /* nome do Sabonete */
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "GothamBold";
+}
+
+.product-info {
+  /* Class que abrange o Preço e informação do produto  */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  /* Class do preço dos produtos */
+  font-size: 24px;
+  font-weight: bolder;
+  color: #000;
+  margin: 0;
+  font-family: "GothamBold";
+}
+
+.product-description {
+  /* Class do pequeno text ao lado do preço */
+  font-size: 22px;
+  color: #000;
+  margin: 0;
+  font-family: "GothamMedium";
+  font-weight: 300;
+}
+
+.product-highlight {
+  font-size: 22px;
+  color: #555;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.product-ingredients {
+  /* Class que abrange os ingredientes */
+  font-size: 20px;
+  font-family: "Raleway";
+}
+
+.produtos {
+  background-color: #efefef;
+  width: 100%;
+}
+
+.kit-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  font-family: "Raleway", sans-serif;
+}
+
+.kit-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.kit-price-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 41px;
+}
+
+.kit-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.kit-details {
+  font-size: 25px;
+  color: #555;
+  margin: 0;
+}
+
+.kit-description {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.kit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #ccc;
+}
+
+.kit-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+.kit-add {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.kit-extra-details {
+  display: none;
+  margin-top: 5px;
+  font-size: 20px;
+  color: #555;
+}
+
+.novidades {
+  width: 100%;
+  background-color: #ededed;
+  position: relative;
+}
+
+.novidades-title {
+  font-size: 100px;
+  font-weight: bold;
+  color: #2e606f;
+  margin-top: 0;
+  font-family: "GothamBold";
+  left: 4.27vw;
+  position: absolute;
+  top: -7%;
+  
+}
+
+.novidades-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  padding-top: 3%;
+}
+
+.novidade-item {
+  position: relative;
+  width: 20.78vw;   
+  height:36.94vh;  
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 45px;
+}
+
+.novidade-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+.novidade-text {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-family: "raleway";
+}
+
+.faqs {
+  font-family: 'Raleway', sans-serif;
+  background-color: #ededed;
+  padding: 90px;
+}
+
+.faqs-title {
+  font-size: 100px;
+  color: #2e606f;
+  font-family: "GothamBold";
+  text-align: center;
+}
+
+.faqs-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 90px;
+}
+
+.faq-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000; 
+  gap: 120px; 
+  cursor: pointer;
+}
+
+.faq-question {
+  font-size: 20px;
+  font-weight: bold; 
+}
+
+.faq-toggle {
+  font-size: 36px; 
+}
+
+.faq-extra-details {
+  display: none;
+  font-size: 17px;
+  color: #555;
+  max-width: 420px; /* Limit the width of the details text */
+  word-wrap: break-word; /* Ensure long words break properly */
+  text-align: left;
+}
+
+.faq-extra-details.visible {
+  display: block;
+}
+
+.faq-item.active .faq-extra-details {
+  display: block; 
+}
+
+@media (min-width:0px)and (max-width: 602px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .menu-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .menu-close:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column;
+    background: #19272d;
+    width: 180px;
+    height: 153px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    margin-right: 21px;
+    margin-top: 34px;
+    font-size: 18px;
+  }
+
+  .navigation.active {
+    display: flex;
+  }
+
+  .navigation a {
+    font-size: 18px;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .separador {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    border: none;
+    margin: 5px auto;
+  }
+
+  .sabonete {
+    width: 325px;
+    height: 260px;
+    font-size: 47px;
+    padding-left: 40px;
+  }
+
+  .sabonete-text {
+    padding-left: 40px;
+    width: 240px;
+    height: 140px;
+    font-size: 30px;
+  }
+
+  .main {
+    background-image: url("imgs/Ipad_Mae_Hero@2x.png");
+    background-position: 20% 50%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: flex;
+    width: 102px;
+    height: 102px;
+    background-color: #192327;
+    border-radius: 50%;
+    object-fit: scale-down;
+    margin-left: 36px;
+    margin-top: 34px;
+  }
+
+  .logo-mobile img {
+    width: 74px;
+    height: 42px;
+    padding-top: 20px;
+    padding-left: 13px;
+  }
+
+  .produtos-title {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "GothamBold";
+    color: #2e606f;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .title-anossa {
+    margin-right: 91px;
+  }
+
+  .title-colecao {
+    margin-right: 22px;
+  }
+
+  .product-container {
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-container.reverse {
+    /* Class dos Containers 2 e 4 */
+    flex-direction: column-reverse;
+    width: 90%;
+    padding: 10px;
+  }
+
+  .yellow-sabonete {
+    width: 40%;
+    background-color: white;
+  }
+
+  .product-text {
+    text-align: center;
+  }
+
+  .product-text h2 {
+    font-size: 20px;
+    width: 75%;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .produtct-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-price {
+    font-size: 24px;
+    text-align: center;
+  }
+  .produto-highlight {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .product-description {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .product-highlight,
+  .product-ingredients {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .kit-container {
+    width: 70%;
+    height: auto;
+    margin-top: 36px;
+    margin-right: 28px;
+    
+  }
+
+  .kits {
+    width: 100%;
+    height: 140vw;
+    background-image: url("imgs/Image\ 11@2x.png");
+    margin-top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 1px;
+  }
+
+  .kit-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  .kit-price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 41px;
+  }
+
+  .kit-price {
+    font-size: 21px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+  }
+
+  .kit-details {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+  }
+
+  .kit-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .kit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  .kit-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .kit-add {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .kit-extra-details {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #555;
+  }
+
+  .novidades-title {
+    font-size: 40px; 
+  }
+
+  .novidade-text {
+    font-size: 12px; 
+  }
+
+  .novidades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    justify-items: center;
+    gap: 5px;
+    padding-top: 3%;
+  }
+
+  .novidade-item {
+    position: relative;
+    width: 37.78vw;
+    height: 20.78vh;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 45px;
+  }
+}
+
+@media (min-width: 603px) and (max-width: 1081px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: black;
+  }
+  
+
+  .logo {
+    padding-left: 39px;
+    padding-top: 9.14px;
+    content: url("imgs/Group\ 478@2x.png");
+    width: 77px;
+    height: 45px;
+  }
+
+  .sabonete {
+    padding-left: 74px;
+    font-size: 74px;
+    width: 526px;
+    height: 420px;
+  }
+
+  .sabonete-text {
+    padding-left: 74px;
+    width: 288px;
+    height: 168px;
+    font-size: 36px;
+  }
+
+  .main {
+    background-image: url("imgs/Ipad_Mae_Hero@2x.png");
+  }
+  .produtos-title {
+    font-size: 61px;
+    font-weight: 700;
+    font-family: "GothamBold";
+    color: #2e606f;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .title-anossa {
+    margin-right: 191px;
+  }
+
+  .title-colecao {
+    margin-right: 43px;
+  }
+
+
+  .product-container {
+    flex-direction: column;
+    align-items: left;
+    width: 60%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 39px;
+  }
+
+  .product-container.reverse {
+    /* Class dos Containers 2 e 4 */
+    flex-direction: column-reverse;
+    align-items: left;
+    width: 60%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 39px;
+  }
+
+  .yellow-sabonete {
+    width: 60%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  .product-text {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .product-text h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: "GothamBold";
+  }
+
+  .product-price {
+    display: inline;
+    font-size: 24px;
+
+    font-family: "GothamBold";
+  }
+
+  .product-description {
+    display: inline;
+    font-size: 20px;
+    font-family: "GothamMedium";
+    padding-left: 21px;
+  }
+
+  .product-highlight {
+    font-size: 18px;
+    margin-top: 10px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .product-ingredients {
+    font-size: 16px;
+    margin-top: 10px;
+    font-family: "Raleway";
+  }
+
+  .kit-container {
+    width: 55.5%;
+    height: auto;
+    margin-top: 100px;
+    margin-right: 108px;
+  }
+
+  .kits {
+    width: 100%;
+    height: 105vw;
+    background-image: url("imgs/Image\ 11@2x.png");
+    margin-top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 1px;
+  }
+
+  .kit-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  .kit-price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 41px;
+  }
+
+  .kit-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+  }
+
+  .kit-details {
+    font-size: 25px;
+    color: #555;
+    margin: 0;
+  }
+
+  .kit-description {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .kit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  .kit-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .kit-add {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .kit-extra-details {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #555;
+  }
+
+  .novidades-title {
+    font-size: 60px; 
+  }
+
+  .novidade-text {
+    font-size: 12px; 
+  }
+
+  .novidades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-items: center;
+    gap: 20px;
+    padding-top: 3%;
+  }
+
+  .novidade-item {
+    position: relative;
+    width: 26.78vw; 
+    height: 20.78vh; 
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 45px;
+  }
+}
+
+@media (min-width: 1090px) {
+  .logo {
+    padding-left: 93px;
+    padding-top: 20.51px;
+  }
+
+  h1 {
+    padding-left: 80px;
+  }
+
+  .sabonete-text {
+    padding-left: 94px;
+  }
+
+  .product-container {
+    flex-direction: row;
+    width: 63%;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+  }
+
+  .yellow-sabonete {
+    width: 480px;
+    height: 361px;
+  }
+
+  .product-text {
+    max-width: 42%;
+  }
+
+  .product-text h2 {
+    font-size: 26px;
+  }
+
+  .product-price {
+    display: inline;
+    font-size: 24px;
+  }
+
+  .product-description {
+    display: inline;
+    padding-left: 18px;
+  }
+
+  .product-description,
+  .product-highlight,
+  .product-ingredients {
+    font-size: 20px;
+  }
+
+  .kit-container {
+    width: 32.6vw;
+    height: auto;
+    margin-top: 141px;
+    margin-right: 348px;
+  }
+
+  .kits {
+    width: 100%;
+    height: 105vw;
+    background-image: url("imgs/Image\ 11@2x.png");
+    margin-top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 20px;
+  }
+}
+
+
+/* Footer */
+.footer {
+  background-color: #f8f8f8;
+  padding: 20px 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.mindshaker {
+  font-weight: bold;
+  color: #666;
+}
+/* End do Footer*/
