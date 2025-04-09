@@ -336,59 +336,6 @@ a {
   font-family: "raleway";
 }
 
-.faqs {
-  font-family: 'Raleway', sans-serif;
-  background-color: #ededed;
-  padding: 90px;
-}
-
-.faqs-title {
-  font-size: 100px;
-  color: #2e606f;
-  font-family: "GothamBold";
-  text-align: center;
-}
-
-.faqs-container {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  gap: 90px;
-}
-
-.faq-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.faq-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #000; 
-  gap: 120px; 
-  cursor: pointer;
-}
-
-.faq-question {
-  font-size: 20px;
-  font-weight: bold; 
-}
-
-.faq-toggle {
-  font-size: 36px; 
-}
-
-.faq-extra-details {
-  display: none;
-  font-size: 17px;
-  color: #555;
-  max-width: 420px; /* Limit the width of the details text */
-  word-wrap: break-word; /* Ensure long words break properly */
-  text-align: left;
-}
-
 .faq-extra-details.visible {
   display: block;
 }
@@ -930,6 +877,59 @@ a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 45px;
   }
+
+  .faqs {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ededed;
+    padding: 90px;
+  }
+  
+  .faqs-title {
+    font-size: 100px;
+    color: #2e606f;
+    font-family: "GothamBold";
+    text-align: center;
+  }
+  
+  .faqs-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 90px;
+  }
+  
+  .faq-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .faq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000; 
+    gap: 120px; 
+    cursor: pointer;
+  }
+  
+  .faq-question {
+    font-size: 20px;
+    font-weight: bold; 
+  }
+  
+  .faq-toggle {
+    font-size: 36px; 
+  }
+  
+  .faq-extra-details {
+    display: none;
+    font-size: 17px;
+    color: #555;
+    max-width: 420px; /* Limit the width of the details text */
+    word-wrap: break-word; /* Ensure long words break properly */
+    text-align: left;
+  }
 }
 
 @media (min-width: 1090px) {
@@ -1001,6 +1001,59 @@ a {
     background-position: center;
     padding-top: 20px;
   }
+  .faqs {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ededed;
+    padding: 90px;
+  }
+  
+  .faqs-title {
+    font-size: 100px;
+    color: #2e606f;
+    font-family: "GothamBold";
+    text-align: center;
+  }
+  
+  .faqs-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 90px;
+  }
+  
+  .faq-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .faq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000; 
+    gap: 120px; 
+    cursor: pointer;
+  }
+  
+  .faq-question {
+    font-size: 20px;
+    font-weight: bold; 
+  }
+  
+  .faq-toggle {
+    font-size: 36px; 
+  }
+  
+  .faq-extra-details {
+    display: none;
+    font-size: 17px;
+    color: #555;
+    max-width: 420px; /* Limit the width of the details text */
+    word-wrap: break-word; /* Ensure long words break properly */
+    text-align: left;
+  }
+  
 }
 
 
