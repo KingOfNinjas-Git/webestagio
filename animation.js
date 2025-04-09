@@ -82,3 +82,8 @@ function toggleFaq(faqItem) {
   const details = document.getElementById(targetId);
   details.classList.toggle("visible");
 }
+
+function toggleMenu() {
+const nav = document.querySelector(".navigation");
+nav.classList.toggle("active");
+ }
