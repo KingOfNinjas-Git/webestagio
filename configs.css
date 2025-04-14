@@ -14,8 +14,8 @@
 
 .main-container {
   max-width: 1920px;
-  margin: 0 auto; 
-  overflow-x: hidden; 
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 nav {
@@ -401,7 +401,6 @@ a {
   color: #666;
 }
 
-
 .popup {
   position: fixed;
   top: 0;
@@ -631,7 +630,7 @@ a {
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background-color: #EFEFEF;
+    background-color: #efefef;
     box-shadow: none;
   }
 
@@ -643,14 +642,13 @@ a {
   }
 
   .imgs-sabonete {
-    background-color: #ffffff; 
-    padding: 20px; 
+    background-color: #ffffff;
+    padding: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
-    border-radius: 10px; 
+    border-radius: 10px;
     width: 70%;
   }
-
 
   .product-text {
     text-align: center;
@@ -911,7 +909,6 @@ a {
     color: #2e606f;
     margin-bottom: 5px;
   }
-
 }
 
 @media (min-width: 603px) and (max-width: 1081px) {
@@ -1350,7 +1347,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .footer-bottom {
     max-width: 1000px;
     margin: 0 auto;
@@ -1362,7 +1359,7 @@ a {
     color: #666;
   }
 
-  .icon-text{
+  .icon-text {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1370,5 +1367,5 @@ a {
 
   .social-icons {
     justify-content: center;
-}
+  }
 }
