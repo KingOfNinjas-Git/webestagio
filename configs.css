@@ -1271,6 +1271,25 @@ a {
     background-position: center;
     padding-top: 20px;
   }
+
+  .novidades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 5px;
+    padding-top: 10%;
+  }
+
+  .novidade-item {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 45px;
+  }
+
   .faqs {
     font-family: "Raleway", sans-serif;
     background-color: #ededed;
@@ -1322,4 +1341,34 @@ a {
     word-wrap: break-word;
     text-align: left;
   }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .icon-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+}
 }
