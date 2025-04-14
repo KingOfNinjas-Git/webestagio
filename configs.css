@@ -61,8 +61,7 @@ a {
   font-size: 81px;
   font-weight: 700;
   display: flex;
-  height: 421px;
-  width: 668px;
+  max-width: 668px;
   font-family: "GothamHTF";
 }
 
@@ -70,8 +69,7 @@ a {
   color: white;
   font-size: 50px;
   font-style: normal;
-  width: 392px;
-  height: 253px;
+  max-width: 392px;
   font-family: "Raleway";
   font-weight: 100;
 }
@@ -285,13 +283,6 @@ a {
   left: 4.27vw;
   position: absolute;
   top: -7%;
-}
-
-.novidades-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  padding-top: 3%;
 }
 
 .novidade-item {
@@ -1194,12 +1185,8 @@ a {
     padding-top: 20.51px;
   }
 
-  h1 {
+  h1, .sabonete-text {
     padding-left: 80px;
-  }
-
-  .sabonete-text {
-    padding-left: 94px;
   }
 
   .product-container {
@@ -1245,7 +1232,6 @@ a {
 
   .kit-container {
     width: 32.6vw;
-    height: auto;
     margin-top: 141px;
     margin-right: 348px;
   }
