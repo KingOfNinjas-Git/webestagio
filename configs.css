@@ -12,6 +12,12 @@
   background-position: center;
 }
 
+.main-container {
+  max-width: 1920px;
+  margin: 0 auto; 
+  overflow-x: hidden; 
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -1190,7 +1196,7 @@ a {
   }
 }
 
-@media (min-width: 1090px) and (max-width:1920px) {
+@media (min-width: 1090px) {
   .logo {
     padding-left: 93px;
     padding-top: 20.51px;
