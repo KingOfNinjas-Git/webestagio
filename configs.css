@@ -642,10 +642,15 @@ a {
     padding: 10px;
   }
 
-  .yellow-sabonete {
-    width: 40%;
-    background-color: white;
+  .imgs-sabonete {
+    background-color: #ffffff; 
+    padding: 20px; 
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 10px; 
+    width: 70%;
   }
+
 
   .product-text {
     text-align: center;
@@ -906,6 +911,7 @@ a {
     color: #2e606f;
     margin-bottom: 5px;
   }
+
 }
 
 @media (min-width: 603px) and (max-width: 1081px) {
@@ -983,7 +989,7 @@ a {
     margin-right: 39px;
   }
 
-  .yellow-sabonete {
+  .imgs-sabonete {
     width: 60%;
     height: auto;
     margin-bottom: 15px;
@@ -1219,7 +1225,7 @@ a {
     background-color: #efefef;
   }
 
-  .yellow-sabonete {
+  .imgs-sabonete {
     width: 480px;
     height: 361px;
   }
