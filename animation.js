@@ -17,16 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         menuIcon.style.display = "flex";
     });
 
-    // Reset menu visibility on window resize
-    window.addEventListener("resize", function () {
-        if (window.innerWidth > 602) {
-            navigation.classList.remove("active");
-            menuIcon.style.display = "none";
-        } else {
-            menuIcon.style.display = "flex";
-        }
-    });
-
     document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('click', () => {
             const extraDetails = item.querySelector('.faq-extra-details');
