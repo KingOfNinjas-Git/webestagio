@@ -16,7 +16,6 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-echo "here -> " . $_POST['name'] . " (is the value1!!!)";
 
 /* ===== VERIFICAR SE FORM FOI SUBMETIDO E OBTER INFORMAÇÃO ===== */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
