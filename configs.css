@@ -424,7 +424,6 @@ a {
 
 .popup-content input,
 .popup-content textarea {
-  width: 95%;
   padding: 15px;
   border: 1px solid #ddd;
   font-size: 14px;
@@ -449,6 +448,7 @@ a {
   font-size: 16px;
   width: 100px;
   margin: 0 auto;
+  border-radius: 25px;
 }
 
 .popup-content button:hover {
@@ -898,6 +898,9 @@ a {
     text-decoration: underline;
     color: #2e606f;
     margin-bottom: 5px;
+  }
+  .popup-content {
+    padding: 12px;
   }
 }
 
