@@ -415,13 +415,13 @@
       <div id="contact-popup" class="popup hidden">
         <div class="popup-content">
           <h2>CONTACTE-NOS</h2>
-          <form >
-            <input type="text" placeholder="Nome" required />
+          <form action="submit_contact.php" method="POST">
+            <input  id="name" type="text" name="name" placeholder="Nome" required />
             <div class="form-row">
-              <input type="email" placeholder="Email" required />
-              <input type="tel" placeholder="Telefone" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="tel" name="phone" placeholder="Telefone" required />
             </div>
-            <textarea placeholder="Mensagem" required></textarea>
+            <textarea name="message" placeholder="Mensagem" required></textarea>
             <button type="submit">Enviar</button>
           </form>
           <span class="close-popup" onclick="togglePopup()">×</span>
