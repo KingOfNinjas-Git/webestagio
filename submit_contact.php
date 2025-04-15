@@ -1,5 +1,6 @@
 <?php
 
+http://localhost/webestagio/index.html
 
 /* ===== DADOS DE CONECTION ===== */
 $host = 'localhost';
