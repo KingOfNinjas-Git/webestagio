@@ -1,6 +1,5 @@
 <?php
 
-echo "e hohodchoiado oidou a";
 
 /* ===== DADOS DE CONECTION ===== */
 $host = 'localhost';
@@ -44,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         echo "Please fill in all fields.";
-        echo "que?";
     }
 } else {
     echo "Invalid request method.";
