@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navigation.classList.remove("active");
         menuIcon.style.display = "flex";
     });
-
+    /* ===== FAQS SECTION ===== */
     document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('click', () => {
             const extraDetails = item.querySelector('.faq-extra-details');
@@ -37,6 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+function toggleFaq(faqItem) {
+    const targetId = faqItem.getAttribute("data-target");
+    const details = document.getElementById(targetId);
+    details.classList.toggle("visible");
+}
+
+/* ===== KITS SECTION ===== */
 function toggleDetails(element) {
     const allDetails = document.querySelectorAll(".kit-extra-details");
     const allToggles = document.querySelectorAll(".kit-add");
@@ -63,23 +71,18 @@ function toggleDetails(element) {
     const container = element.closest(".kit-container");
     if (container) {
         container.style.transition = "height 0.3s ease";
-        container.style.height = "auto"; 
+        container.style.height = "auto";
     }
 }
 
-function toggleFaq(faqItem) {
-  const targetId = faqItem.getAttribute("data-target");
-  const details = document.getElementById(targetId);
-  details.classList.toggle("visible");
-}
-
 function toggleMenu() {
-const nav = document.querySelector(".navigation");
-nav.classList.toggle("active");
- }
-
- function togglePopup() {
+    const nav = document.querySelector(".navigation");
+    nav.classList.toggle("active");
+}
+/* ===== PAGE UNSCROLLABLE WHEN POPUP OPEN ===== */
+function togglePopup() {
     const popup = document.getElementById('contact-popup');
     popup.classList.toggle('hidden');
-  }
+    document.body.classList.toggle('no-scroll');
+}
 

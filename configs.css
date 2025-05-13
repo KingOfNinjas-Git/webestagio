@@ -18,6 +18,7 @@
   max-width: 1920px;
   margin: 0 auto;
   overflow-x: hidden;
+  background-color: #efefef;
 }
 
 nav {
@@ -185,8 +186,7 @@ a {
   font-family: "Raleway";
 }
 
-.produtos {
-  background-color: #efefef;
+.produtos { 
   width: 100%;
 }
 
@@ -398,8 +398,6 @@ a {
 .popup-content {
   background-color: white;
   padding: 30px;
-  width: 90%;
-  max-width: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   border-radius: 10px;
@@ -431,10 +429,6 @@ a {
   background-color: #f5f5f5;
 }
 
-.popup-content .form-row input {
-  width: calc(50% - 5px);
-}
-
 .popup-content textarea {
   height: 100px;
   resize: none;
@@ -460,12 +454,14 @@ a {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 24px;
+  font-size: 48px;
   cursor: pointer;
   color: #333;
 }
-
-
+/* ===== STOP PAGE FROM SCROLLING WHEN POPUP OPEN ===== */
+.no-scroll {
+  overflow: hidden;
+}
 
 @media (min-width: 0px) and (max-width: 602px) {
   .menu-icon {
@@ -626,7 +622,6 @@ a {
 
   .product-container.reverse {
     /* Class dos Containers 2 e 4 */
-    flex-direction: column-reverse;
     width: 90%;
     padding: 10px;
   }
@@ -903,6 +898,18 @@ a {
   .popup-content {
     padding: 12px;
   }
+  .popup-content{
+    padding: 30px;
+    width: 90%;
+    max-width: 350px;
+  }
+  .popup-content .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .popup-content textarea {
+    margin-top: 15px;
+  }
 }
 
 @media (min-width: 603px) and (max-width: 1081px) {
@@ -968,7 +975,7 @@ a {
 
   .product-container.reverse {
     /* Class dos Containers 2 e 4 */
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: left;
     width: 60%;
     margin: 20px auto;
@@ -1193,6 +1200,15 @@ a {
     justify-content: space-between;
     font-size: 12px;
   }
+
+  .popup-content{
+    padding: 30px;
+    width: 90%;
+    max-width: 650px;
+  }
+  .popup-content .form-row input {
+    width: calc(50% - 5px);
+  }
 }
 
 @media (min-width: 1090px) {
@@ -1216,6 +1232,7 @@ a {
 
   .product-container.reverse {
     background-color: #ffffff;
+    flex-direction: row-reverse;
   }
   .imgs-sabonete {
     max-width: 480px;
@@ -1300,11 +1317,9 @@ a {
     font-family: "Raleway", sans-serif;
     gap: 90px;
   }
-
   .faq-column {
     gap: 20px;
   }
-
   .faq-item {
     display: flex;
     justify-content: space-between;
@@ -1313,16 +1328,13 @@ a {
     gap: 120px;
     cursor: pointer;
   }
-
   .faq-question {
     font-size: 20px;
     font-weight: bold;
   }
-
   .faq-toggle {
     font-size: 36px;
   }
-
   .faq-extra-details {
     display: none;
     font-size: 16px;
@@ -1331,7 +1343,6 @@ a {
     word-wrap: break-word;
     text-align: left;
   }
-
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1340,7 +1351,6 @@ a {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .footer-bottom {
     max-width: 1000px;
     margin: 0 auto;
@@ -1349,19 +1359,24 @@ a {
     font-size: 12px;
     color: #666;
   }
-
   .footer-section {
     min-width: 200px;
     margin: 10px;
   }
-  
   .icon-text {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .social-icons {
     justify-content: center;
+  }
+  .popup-content{
+    padding: 30px;
+    width: 90%;
+    max-width: 720px;
+  }
+  .popup-content .form-row input {
+    width: calc(50% - 5px);
   }
 }
