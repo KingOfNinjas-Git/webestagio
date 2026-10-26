@@ -1,20 +1,16 @@
 <?php
 
-/* ===== DADOS DE CONECTION ===== */
+/* ===== LIGAÇÃO À DB (SQLite, ver db.php) ===== */
 
-$host = 'localhost';
-$dbname = 'soap_collection';
-$username = 'root';
-$password = '';
+require_once __DIR__ . '/db.php';
 
 /* ===== TENTATIVA DE CONECTION Á DB ===== */
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = mae_db();
 
     /* ===== FETCH AO SABONETES ===== */
-    $stmt = $pdo->query("SELECT * FROM soaps");
+    $stmt = $pdo->query("SELECT * FROM soaps ORDER BY id");
     $soaps = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());

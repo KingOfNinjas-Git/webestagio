@@ -1,0 +1,4 @@
+# Base de dados SQLite (criada automaticamente) e configuração local
+/data/*.sqlite
+/data/*.sqlite-journal
+/config.local.php

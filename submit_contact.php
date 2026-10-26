@@ -1,18 +1,12 @@
 <?php
 
-http://localhost/webestagio/index.html
-
-/* ===== DADOS DE CONECTION ===== */
-$host = 'localhost';
-$dbname = 'contact_form';
-$username = 'root';
-$password = '';
+/* ===== LIGAÇÃO À DB (SQLite, ver db.php) ===== */
+require_once __DIR__ . '/db.php';
 
 
 /* ===== CONECTAR Á DATABASE ===== */
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = mae_db();
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }

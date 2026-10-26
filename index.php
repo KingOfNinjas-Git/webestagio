@@ -59,9 +59,9 @@
               <p class="product-price"><strong><?= number_format($soap['price'], 2) ?>€</strong></p>
               <p class="product-description"><?= htmlspecialchars($soap['description']) ?></p>
             </div>
-            <p class="product-highlight"><?= htmlspecialchars($soap['highlight']) ?></p>
+            <p class="product-highlight"><?= htmlspecialchars($soap['highlight'] ?? '') ?></p>
             <p class="product-ingredients">
-              <strong>Ingredientes:</strong> <?= htmlspecialchars($soap['ingredients']) ?>
+              <strong>Ingredientes:</strong> <?= htmlspecialchars($soap['ingredients'] ?? '') ?>
             </p>
           </div>
         </div>
