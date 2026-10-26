@@ -6,11 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="configs.css" />
   <?php include __DIR__ . '/share-head.php'; ?>
+  <link rel="preload" as="image" href="imgs/Ipad_Mae_Hero@2x.webp" media="(max-width: 1081px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="imgs/mainbackground.webp" media="(min-width: 1082px)" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="querys.css">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" />
+  </noscript>
   <script src="animation.js" defer></script>
 </head>
 
@@ -19,9 +24,9 @@
   <div class="main-container">
     <div class="main">
       <nav>
-        <img src="imgs/maelogoV1.png" alt="" class="logo" />
+        <img src="imgs/maelogoV1.png" alt="MÃE" class="logo" width="318" height="264" />
         <div class="logo-mobile">
-          <img src="imgs/maelogoV2.png" alt="" />
+          <img src="imgs/maelogoV2.png" alt="MÃE" width="154" height="91" />
         </div>
         <div class="menu-container">
           <div class="menu-icon" onclick="toggleMenu()">
@@ -44,7 +49,7 @@
         Suave na sua pele e inofensivo para o meio ambiente.
       </p>
     </div>
-    <div class="produtos">
+    <main class="produtos" id="main-content">
       <h2 class="produtos-title">
         <span class="title-anossa">a nossa</span><br>
         <span class="title-colecao">colecção</span>
@@ -53,7 +58,7 @@
       <?php foreach ($soaps as $index => $soap): ?> 
         <div class="product-container <?= ($index === 1 || $index === 3) ? 'reverse' : '' ?>">
           <img src="<?= htmlspecialchars($soap['image_url']) ?>" alt="<?= htmlspecialchars($soap['title']) ?>"
-            class="imgs-sabonete">
+            class="imgs-sabonete" width="900" height="677" loading="lazy" decoding="async">
           <div class="product-text">
             <h2 class="product-title"><?= htmlspecialchars($soap['title']) ?></h2>
             <div class="product-info">
@@ -67,7 +72,7 @@
           </div>
         </div>
       <?php endforeach; ?>
-    </div>
+    </main>
   </div>
   <div class="kits">
     <div class="kit-container">
@@ -164,35 +169,35 @@
     <h2 class="novidades-title">novidades</h2>
     <div class="novidades-grid">
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/watermelon.png" alt="Novidade 1" />
+        <img src="imgs/imgs-produtos/watermelon.webp" alt="Novidade 1" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Bálsamo Labial Melancia</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/sealover.png" alt="Novidade 2" />
+        <img src="imgs/imgs-produtos/sealover.webp" alt="Novidade 2" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Sabonete Sea Lover</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/toranjashampoo.png" alt="Novidade 3" />
+        <img src="imgs/imgs-produtos/toranjashampoo.webp" alt="Novidade 3" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Shampoo Sólido para Cabelos Normais</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/azeitesabonete.png" alt="Novidade 4" />
+        <img src="imgs/imgs-produtos/azeitesabonete.webp" alt="Novidade 4" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Sabonete de Azeite Biológico de Tomilho</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/incensoshampoo.png" alt="Novidade 5" />
+        <img src="imgs/imgs-produtos/incensoshampoo.webp" alt="Novidade 5" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Shampoo Sólido para Cabelo e Barba</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/kitclassicos.png" alt="Novidade 6" />
+        <img src="imgs/imgs-produtos/kitclassicos.webp" alt="Novidade 6" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Kit Miniaturas Sabonetes Clássicos</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs\imgs-produtos\wonderbalm.png" alt="Novidade 7" />
+        <img src="imgs/imgs-produtos/wonderbalm.webp" alt="Novidade 7" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Wonder Balm</p>
       </div>
       <div class="novidade-item">
-        <img src="imgs/imgs-produtos/limasabonete.png" alt="Novidade 8" />
+        <img src="imgs/imgs-produtos/limasabonete.webp" alt="Novidade 8" width="640" height="640" loading="lazy" decoding="async" />
         <p class="novidade-text">Bálsamo Labial Lima</p>
       </div>
     </div>
@@ -294,14 +299,14 @@
           <p><strong>Telefone sede</strong></p>
           <p>+351 214 123 780</p>
         </div>
-        <a href="javascript:void(0);" onclick="togglePopup()">Contacte-nos</a>
+        <a href="#" onclick="togglePopup(); return false;">Contacte-nos</a>
       </div>
       <div class="footer-section">
         <p><strong class="icon-text">Redes sociais</strong></p>
         <div class="social-icons">
-          <a href="#"><img src="imgs/imgs-produtos/Icon simple-facebook.svg" alt="Facebook" /></a>
-          <a href="#"><img src="imgs/imgs-produtos/Icon simple-youtube.svg" alt="YouTube" /></a>
-          <a href="#"><img src="imgs/imgs-produtos/Icon simple-instagram.svg" alt="Instagram" /></a>
+          <a href="#"><img src="imgs/imgs-produtos/Icon simple-facebook.svg" alt="Facebook" width="24" height="24" loading="lazy" /></a>
+          <a href="#"><img src="imgs/imgs-produtos/Icon simple-youtube.svg" alt="YouTube" width="24" height="24" loading="lazy" /></a>
+          <a href="#"><img src="imgs/imgs-produtos/Icon simple-instagram.svg" alt="Instagram" width="24" height="24" loading="lazy" /></a>
         </div>
       </div>
     </div>

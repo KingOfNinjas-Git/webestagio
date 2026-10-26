@@ -9,7 +9,7 @@ return [
         'description' => '140 gr - Sem perfume',
         'highlight' => null,
         'ingredients' => 'Sodium Olivate (Azeite), Sodium Cocoate (Óleo de Coco), Sodium palmate (Óleo de Palma biológico e sustentável), Sodium avocadate (Óleo de Abacate), Aqua, Glycrine, Sodium cocoa butterate (Manteiga de Cacau), Sodium castorate (Óleo de Rícino), Camellia sienensis leaf extract (Chá Verde), Parfum, Triticum vulgare grass (Erva Trigo em pó).',
-        'image_url' => 'imgs/yellowsabonete.png',
+        'image_url' => 'imgs/yellowsabonete.webp',
     ],
     [
         'id' => 2,
@@ -18,7 +18,7 @@ return [
         'description' => '140 gr - Sem perfume',
         'highlight' => 'Enriquecido com Óleo de Kukui e Aloé Vera.',
         'ingredients' => 'Sodium cocoa butterate (Manteiga de Cacau), Sodium castorate (Óleo de Rícino), Camellia sinensis leaf extract (Chá Verde), Parfum, Triticum vulgare grass (Erva Trigo em pó), Rosmarinus officinalis oleoresin leaf extract, Hexyl cinnamal, Limonene, Geraniol, Citronellol, Benzyl Salicylate, Eugenol, Alpha-Isomethyl Ionone, Linalool.',
-        'image_url' => 'imgs/magentasabonete.png',
+        'image_url' => 'imgs/magentasabonete.webp',
     ],
     [
         'id' => 3,
@@ -27,7 +27,7 @@ return [
         'description' => '140 gr - Sem perfume',
         'highlight' => 'Enriquecido com Óleo de Kukui e Aloé Vera.',
         'ingredients' => 'Sodium cocoa butterate (Manteiga de Cacau), Sodium castorate (Óleo de Rícino), Camellia sinensis leaf extract (Chá Verde), Parfum, Triticum vulgare grass (Erva Trigo em pó), Rosmarinus officinalis oleoresin leaf extract, Hexyl cinnamal, Limonene, Geraniol, Citronellol, Benzyl Salicylate, Eugenol, Alpha-Isomethyl Ionone, Linalool.',
-        'image_url' => 'imgs/redsabonete.png',
+        'image_url' => 'imgs/redsabonete.webp',
     ],
     [
         'id' => 4,
@@ -36,6 +36,6 @@ return [
         'description' => '140 gr - Sem perfume',
         'highlight' => 'Enriquecido com Óleo de Abacate e Chá Verde.',
         'ingredients' => 'Sodium Olivate (Azeite), Sodium Cocoate (Óleo de Coco), Sodium palmate (Óleo de Palma biológico e sustentável), Sodium avocadate (Óleo de Abacate), Aqua, Glycrine, Sodium cocoa butterate (Manteiga de Cacau), Sodium castorate (Óleo de Rícino), Camellia sinensis leaf extract (Chá Verde), Parfum, Triticum vulgare grass (Erva Trigo em pó).',
-        'image_url' => 'imgs/greensabonete.png',
+        'image_url' => 'imgs/greensabonete.webp',
     ],
 ];
