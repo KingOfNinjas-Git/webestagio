@@ -10,6 +10,8 @@ if (is_file(__DIR__ . '/config.local.php')) {
     require_once __DIR__ . '/config.local.php';
 }
 
+require_once __DIR__ . '/demo.php';
+
 function mae_db(): PDO
 {
     static $pdo = null;
@@ -29,6 +31,7 @@ function mae_db(): PDO
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     mae_setup($pdo);
+    mae_demo_cleanup($pdo, $path);
 
     return $pdo;
 }

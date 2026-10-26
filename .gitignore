@@ -2,3 +2,4 @@
 /data/*.sqlite
 /data/*.sqlite-journal
 /config.local.php
+/data/.demo-cleanup
