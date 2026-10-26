@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="configs.css" />
+  <link rel="stylesheet" href="configs.css?v=<?= filemtime(__DIR__ . '/configs.css') ?>" />
   <?php include __DIR__ . '/share-head.php'; ?>
   <link rel="preload" as="image" href="imgs/Ipad_Mae_Hero@2x.webp" media="(max-width: 1081px)" fetchpriority="high" />
   <link rel="preload" as="image" href="imgs/mainbackground.webp" media="(min-width: 1082px)" fetchpriority="high" />
@@ -16,7 +16,7 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" />
   </noscript>
-  <script src="animation.js" defer></script>
+  <script src="animation.js?v=<?= filemtime(__DIR__ . '/animation.js') ?>" defer></script>
 </head>
 
 <body style="margin: 0">
