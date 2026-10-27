@@ -1,0 +1,7 @@
+# Estes ficheiros só são incluídos pela página: nunca devem ser abertos diretamente
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Deny from all
+</IfModule>

@@ -1,88 +1,104 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* O comportamento da página: menu, kit, FAQs e a janela "Contacte-nos".
+   Os botões são <button> a sério: funcionam com o teclado e dizem ao leitor de ecrã se estão abertos (aria-expanded). */
+
+document.addEventListener("DOMContentLoaded", () => {
+    /* ===== MENU (telemóvel) ===== */
     const menuIcon = document.querySelector(".menu-icon");
     const navigation = document.querySelector(".navigation");
-    const closeButton = document.createElement("button");
 
-    closeButton.innerHTML = "x";
-    closeButton.classList.add("menu-close");
-    navigation.appendChild(closeButton);
+    const setMenu = (open) => {
+        navigation.classList.toggle("active", open);
+        menuIcon.style.display = open ? "none" : "";
+        menuIcon.setAttribute("aria-expanded", String(open));
+    };
 
-    menuIcon.addEventListener("click", function () {
-        navigation.classList.add("active");
-        menuIcon.style.display = "none";
+    menuIcon.addEventListener("click", () => setMenu(true));
+    navigation.querySelector(".menu-close").addEventListener("click", () => setMenu(false));
+    navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+
+    /* ===== KIT E FAQS: um bloco abre e fecha ao clicar ===== */
+    const toggleBlock = (button, panel, isOpen, mark) => {
+        button.setAttribute("aria-expanded", String(isOpen));
+        panel.classList.toggle("visible", isOpen);
+        mark.textContent = isOpen ? "−" : "+";
+    };
+
+    // Kit: só um sabonete aberto de cada vez
+    const kitItems = document.querySelectorAll(".kit-item");
+    kitItems.forEach((item) => {
+        const button = item.querySelector(".kit-toggle");
+        button.addEventListener("click", () => {
+            const willOpen = button.getAttribute("aria-expanded") !== "true";
+            kitItems.forEach((other) => toggleBlock(other.querySelector(".kit-toggle"), other.querySelector(".kit-extra-details"), false, other.querySelector(".kit-add")));
+            toggleBlock(button, item.querySelector(".kit-extra-details"), willOpen, item.querySelector(".kit-add"));
+        });
     });
 
-    closeButton.addEventListener("click", function () {
-        navigation.classList.remove("active");
-        menuIcon.style.display = "flex";
+    // FAQs: cada pergunta abre e fecha sozinha
+    document.querySelectorAll(".faq-item").forEach((button) => {
+        const panel = document.getElementById(button.getAttribute("aria-controls"));
+        button.addEventListener("click", () => {
+            toggleBlock(button, panel, button.getAttribute("aria-expanded") !== "true", button.querySelector(".faq-toggle"));
+        });
     });
-    /* ===== FAQS SECTION ===== */
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const extraDetails = item.querySelector('.faq-extra-details');
 
-            if (extraDetails) {
-                extraDetails.style.display = extraDetails.style.display === 'block' ? 'none' : 'block';
+    /* ===== JANELA "CONTACTE-NOS" ===== */
+    const popup = document.getElementById("contact-popup");
+    const form = popup.querySelector("form");
+    const message = popup.querySelector(".popup-message");
+    let opener = null;
+
+    const setPopup = (open) => {
+        popup.classList.toggle("hidden", !open);
+        document.body.classList.toggle("no-scroll", open); // a página não se mexe por trás da janela
+        if (open) {
+            message.textContent = "";
+            form.querySelector("input").focus();
+        } else if (opener) {
+            opener.focus();
+        }
+    };
+
+    document.querySelectorAll("[data-open-contact]").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            opener = link;
+            setPopup(true);
+        });
+    });
+    popup.querySelector(".close-popup").addEventListener("click", () => setPopup(false));
+    popup.addEventListener("click", (event) => { if (event.target === popup) setPopup(false); }); // clicar fora fecha
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !popup.classList.contains("hidden")) setPopup(false); });
+
+    // Enviar sem sair da página: a resposta aparece dentro da janela
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const send = form.querySelector('button[type="submit"]');
+        send.disabled = true;
+        message.textContent = "A enviar...";
+
+        try {
+            const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+            const result = await response.json();
+            message.textContent = result.message;
+            message.classList.toggle("error", !result.ok);
+            if (result.ok) {
+                form.reset();
+                setTimeout(() => setPopup(false), 2500);
             }
-
-            item.classList.toggle('active');
-        });
+        } catch (error) {
+            message.textContent = "Não foi possível enviar. Tente novamente.";
+            message.classList.add("error");
+        } finally {
+            send.disabled = false;
+        }
     });
 
-    document.querySelectorAll('.faq-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const faqItem = header.parentElement;
-            faqItem.classList.toggle('active');
-        });
-    });
+    // Sem JavaScript, o servidor volta à página com ?contacto=ok ou ?contacto=erro: abrimos a janela com a resposta
+    const result = new URLSearchParams(location.search).get("contacto");
+    if (result) {
+        setPopup(true);
+        message.textContent = result === "ok" ? "Mensagem enviada. Obrigado!" : "Preencha todos os campos com dados válidos.";
+        message.classList.toggle("error", result !== "ok");
+    }
 });
-
-
-function toggleFaq(faqItem) {
-    const targetId = faqItem.getAttribute("data-target");
-    const details = document.getElementById(targetId);
-    details.classList.toggle("visible");
-}
-
-/* ===== KITS SECTION ===== */
-function toggleDetails(element) {
-    const allDetails = document.querySelectorAll(".kit-extra-details");
-    const allToggles = document.querySelectorAll(".kit-add");
-
-
-    const details = element.parentElement.nextElementSibling;
-    const isVisible = details.style.display === "block";
-
-    allDetails.forEach((detail) => {
-        detail.style.display = "none";
-    });
-    allToggles.forEach((toggle) => {
-        toggle.textContent = "+";
-    });
-
-    if (!isVisible) {
-        details.style.display = "block";
-        element.textContent = "-";
-    } else {
-        details.style.display = "none";
-        element.textContent = "+";
-    }
-
-    const container = element.closest(".kit-container");
-    if (container) {
-        container.style.transition = "height 0.3s ease";
-        container.style.height = "auto";
-    }
-}
-
-function toggleMenu() {
-    const nav = document.querySelector(".navigation");
-    nav.classList.toggle("active");
-}
-/* ===== PAGE UNSCROLLABLE WHEN POPUP OPEN ===== */
-function togglePopup() {
-    const popup = document.getElementById('contact-popup');
-    popup.classList.toggle('hidden');
-    document.body.classList.toggle('no-scroll');
-}
-

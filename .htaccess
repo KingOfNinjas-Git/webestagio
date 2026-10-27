@@ -28,3 +28,13 @@ Options -Indexes
         Deny from all
     </IfModule>
 </Files>
+
+# Ficheiros que só são incluídos por outros (nunca abertos diretamente)
+<FilesMatch "^(db|demo|content|share-head|fetch_soaps)\.php$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>

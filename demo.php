@@ -16,7 +16,11 @@ function mae_demo_bar(): void
         return;
     }
 
-    echo '<div role="note" style="position:relative;z-index:9999;background:#06222b;color:#d8f3f7;font:600 13px/1.5 system-ui,sans-serif;text-align:center;padding:8px 14px;">'
+    /* Abaixo do botão do menu (z-index 1001), que nos telemóveis fica fixo no canto superior direito:
+       deixamos-lhe espaço à direita e assim o botão nunca fica tapado pelo aviso. */
+    echo '<style>.mae-demo-bar{position:relative;z-index:900;background:#06222b;color:#d8f3f7;font:600 13px/1.5 system-ui,sans-serif;text-align:center;padding:8px 14px}'
+        . '@media (max-width:602px){.mae-demo-bar{padding-right:70px}}</style>';
+    echo '<div role="note" class="mae-demo-bar">'
         . 'Demonstração de portefólio por <a href="https://franciscowebdev.com" style="color:#fff;text-decoration:underline;">Francisco</a> (portfolio demo): '
         . 'as mensagens do formulário são apagadas ao fim de poucas horas. <strong>Usa dados inventados.</strong>'
         . '</div>';

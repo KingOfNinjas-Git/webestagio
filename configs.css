@@ -1382,3 +1382,144 @@ a {
     width: calc(50% - 5px);
   }
 }
+
+/* ===== BOTÕES A SÉRIO (menu, kit, FAQs, janela de contacto) =====
+   Eram <span> e <div> com onclick; agora são <button>, por isso limpamos o aspeto próprio dos botões. */
+
+.menu-icon,
+.kit-toggle,
+.faq-item,
+.close-popup {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-icon {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.kit-list .kit-item {
+  display: block;
+  padding: 0;
+  font-size: 22px;
+}
+
+.kit-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+.kit-extra-details.visible {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.faq-item {
+  width: 100%;
+  text-align: left;
+  border-bottom: 2px solid #000;
+}
+
+.close-popup {
+  line-height: 1;
+}
+
+.popup-message {
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 14px;
+  color: #2e606f;
+}
+
+.popup-message.error {
+  color: #b00020;
+}
+
+/* ===== TECLADO E MOVIMENTO ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 3px solid #2e606f;
+  outline-offset: 2px;
+}
+
+.main :focus-visible,
+.navigation :focus-visible {
+  outline-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* ===== CANTOS ARREDONDADOS E UM POUCO DE MOVIMENTO ===== */
+
+.product-container,
+.kit-container {
+  border-radius: 22px;
+}
+
+.imgs-sabonete {
+  border-radius: 16px;
+}
+
+.novidade-item {
+  border-radius: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.novidade-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-container {
+  transition: box-shadow 0.25s ease;
+}
+
+.product-container:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.popup-content {
+  border-radius: 22px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  border-radius: 12px;
+}
+
+@media (min-width: 603px) {
+  .navigation {
+    border-bottom-left-radius: 24px;
+  }
+}
+
+@media (max-width: 602px) {
+  .navigation {
+    border-radius: 18px;
+  }
+
+  .menu-close {
+    border-radius: 50%;
+  }
+}

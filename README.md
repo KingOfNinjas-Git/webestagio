@@ -24,3 +24,12 @@ A pasta `data/` tem um `.htaccess` que impede o download do ficheiro. Para mais 
 <?php
 define('MAE_DB_PATH', '/caminho/fora/da/pasta/publica/mae.sqlite');
 ```
+
+## Estrutura
+
+- `index.php`: a página; junta os blocos de `partials/` (hero, kit, novidades, FAQs, rodapé, janela de contacto).
+- `content.php`: os textos e listas que se repetem (kit, novidades, FAQs, rodapé). Para mudar um texto, muda-se aqui. O texto provisório (lorem ipsum) do kit e de algumas FAQs ainda está por substituir.
+- `animation.js`: menu, kit, FAQs e janela de contacto. Os botões são `<button>`: funcionam com o teclado, a janela fecha com Esc, e o formulário responde dentro da janela.
+- `submit_contact.php`: valida e guarda a mensagem (JSON para o JavaScript, ou volta à página sem JavaScript).
+- `configs.css`: os estilos; no fim há secções para os botões, o teclado e os cantos arredondados.
+- `.htaccess`: cache longa das imagens, compressão, e bloqueia o acesso direto a ficheiros que só são incluídos (`db.php`, `content.php`, `partials/`, ...).
