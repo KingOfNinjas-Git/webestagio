@@ -25,29 +25,36 @@ $v = static fn(string $file): int => filemtime(__DIR__ . '/' . $file);
   <?php include __DIR__ . '/partials/hero.php'; ?>
 
   <main>
-    <section class="collection container" id="quem-somos" aria-labelledby="collection-title">
-      <h2 class="section-title" id="collection-title">
-        <span class="line-1">a nossa</span>
-        <span class="line-2">colecção</span>
-      </h2>
-      <?php foreach ($soaps as $soap): ?>
-        <?php $image = htmlspecialchars($soap['image_url']); ?>
-        <article class="soap">
-          <div class="soap-image">
-            <img src="<?= str_replace('.webp', '-480.webp', $image) ?>"
-              srcset="<?= str_replace('.webp', '-480.webp', $image) ?> 480w, <?= $image ?> 900w"
-              sizes="(min-width: 1020px) 470px, (min-width: 760px) 45vw, 90vw"
-              alt="<?= htmlspecialchars($soap['title']) ?>" width="900" height="677" loading="lazy" decoding="async" />
-          </div>
-          <div class="soap-text">
-            <h3 class="soap-title"><?= htmlspecialchars($soap['title']) ?></h3>
-            <p class="soap-price"><?= number_format($soap['price'], 2) ?>€</p>
-            <p class="soap-description"><?= htmlspecialchars($soap['description']) ?></p>
-            <p class="soap-highlight"><?= htmlspecialchars($soap['highlight'] ?? '') ?></p>
-            <p class="soap-ingredients"><strong>Ingredientes:</strong> <?= htmlspecialchars($soap['ingredients'] ?? '') ?></p>
-          </div>
-        </article>
-      <?php endforeach; ?>
+    <section class="collection section container" id="quem-somos" aria-labelledby="collection-title">
+      <div class="section-head">
+        <p class="eyebrow">Sabonetes naturais</p>
+        <h2 class="section-title" id="collection-title">A nossa colecção</h2>
+      </div>
+      <div class="soaps">
+        <?php foreach ($soaps as $soap): ?>
+          <?php $image = htmlspecialchars($soap['image_url']); ?>
+          <article class="soap">
+            <div class="soap-image">
+              <img src="<?= str_replace('.webp', '-480.webp', $image) ?>"
+                srcset="<?= str_replace('.webp', '-480.webp', $image) ?> 480w, <?= $image ?> 900w"
+                sizes="(min-width: 1180px) 560px, (min-width: 760px) 45vw, 90vw"
+                alt="<?= htmlspecialchars($soap['title']) ?>" width="900" height="677" loading="lazy" decoding="async" />
+            </div>
+            <div class="soap-body">
+              <div class="soap-top">
+                <h3 class="soap-title"><?= htmlspecialchars($soap['title']) ?></h3>
+                <p class="soap-price"><?= number_format($soap['price'], 2) ?>€</p>
+              </div>
+              <p class="soap-description"><?= htmlspecialchars($soap['description']) ?></p>
+              <p class="soap-highlight"><?= htmlspecialchars($soap['highlight'] ?? '') ?></p>
+              <details class="soap-ingredients">
+                <summary>Ingredientes</summary>
+                <p><?= htmlspecialchars($soap['ingredients'] ?? '') ?></p>
+              </details>
+            </div>
+          </article>
+        <?php endforeach; ?>
+      </div>
     </section>
 
     <?php include __DIR__ . '/partials/kit.php'; ?>

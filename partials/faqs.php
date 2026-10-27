@@ -1,6 +1,9 @@
 <?php /* As perguntas frequentes em duas colunas; cada <details> abre e fecha sozinho, sem JavaScript. Dados em content.php. */ ?>
-<section class="faqs" aria-labelledby="faqs-title">
-  <h2 class="section-title" id="faqs-title">faq’s</h2>
+<section class="faqs section container" id="faqs" aria-labelledby="faqs-title">
+  <div class="section-head">
+    <p class="eyebrow">Dúvidas</p>
+    <h2 class="section-title" id="faqs-title">Perguntas frequentes</h2>
+  </div>
   <div class="faqs-columns">
     <?php foreach ($site['faqs'] as $column): ?>
       <div class="faq-list">

@@ -1,4 +1,8 @@
 <footer class="footer" id="contactos">
+  <div class="footer-cta">
+    <h2>Fale connosco, teremos gosto em ajudar.</h2>
+    <a class="btn btn-light" href="#contactos" data-open-contact>Contacte-nos</a>
+  </div>
   <div class="footer-grid">
     <div>
       <p><strong>Morada</strong></p>
@@ -11,14 +15,13 @@
     <div>
       <p><strong>Telefone sede</strong></p>
       <p><?= htmlspecialchars($site['footer']['phone']) ?></p>
-      <p><a href="#contactos" data-open-contact><strong>Contacte-nos</strong></a></p>
     </div>
     <div>
       <p><strong>Redes sociais</strong></p>
       <div class="social-icons">
-        <a href="#" aria-label="Facebook"><img src="imgs/imgs-produtos/Icon simple-facebook.svg" alt="" width="24" height="24" loading="lazy" /></a>
-        <a href="#" aria-label="YouTube"><img src="imgs/imgs-produtos/Icon simple-youtube.svg" alt="" width="24" height="24" loading="lazy" /></a>
-        <a href="#" aria-label="Instagram"><img src="imgs/imgs-produtos/Icon simple-instagram.svg" alt="" width="24" height="24" loading="lazy" /></a>
+        <a href="#" aria-label="Facebook"><img src="imgs/imgs-produtos/Icon simple-facebook.svg" alt="" width="20" height="20" loading="lazy" /></a>
+        <a href="#" aria-label="YouTube"><img src="imgs/imgs-produtos/Icon simple-youtube.svg" alt="" width="20" height="20" loading="lazy" /></a>
+        <a href="#" aria-label="Instagram"><img src="imgs/imgs-produtos/Icon simple-instagram.svg" alt="" width="20" height="20" loading="lazy" /></a>
       </div>
     </div>
   </div>
