@@ -3,6 +3,12 @@
 $site = require __DIR__ . '/content.php';
 require __DIR__ . '/fetch_soaps.php';
 
+/* Na versão de demonstração pedimos aos motores de busca que indexem o portefólio e não esta cópia
+   (a pré-visualização ao partilhar o link continua a funcionar). */
+if (mae_demo()) {
+    header('X-Robots-Tag: noindex');
+}
+
 /* A versão do ficheiro vai no endereço: quando o ficheiro muda, o navegador e a cache vão buscar o novo. */
 $v = static fn(string $file): int => filemtime(__DIR__ . '/' . $file);
 ?>
@@ -36,7 +42,7 @@ $v = static fn(string $file): int => filemtime(__DIR__ . '/' . $file);
           <article class="soap">
             <div class="soap-image">
               <img src="<?= str_replace('.webp', '-480.webp', $image) ?>"
-                srcset="<?= str_replace('.webp', '-480.webp', $image) ?> 480w, <?= $image ?> 900w"
+                srcset="<?= str_replace('.webp', '-480.webp', $image) ?> 480w, <?= str_replace('.webp', '-720.webp', $image) ?> 720w, <?= $image ?> 900w"
                 sizes="(min-width: 1180px) 560px, (min-width: 760px) 45vw, 90vw"
                 alt="<?= htmlspecialchars($soap['title']) ?>" width="900" height="677" loading="lazy" decoding="async" />
             </div>
