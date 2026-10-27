@@ -1,6 +1,10 @@
 <?php
 /* A página do site. Os blocos estão em partials/, os textos e listas em content.php, os sabonetes na base de dados (db.php). */
 $site = require __DIR__ . '/content.php';
+require __DIR__ . '/fetch_soaps.php';
+
+/* A versão do ficheiro vai no endereço: quando o ficheiro muda, o navegador e a cache vão buscar o novo. */
+$v = static fn(string $file): int => filemtime(__DIR__ . '/' . $file);
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,55 +12,49 @@ $site = require __DIR__ . '/content.php';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="configs.css?v=<?= filemtime(__DIR__ . '/configs.css') ?>" />
+  <link rel="stylesheet" href="styles.css?v=<?= $v('styles.css') ?>" />
   <?php include __DIR__ . '/share-head.php'; ?>
-  <link rel="preload" as="image" href="imgs/Ipad_Mae_Hero@2x.webp" media="(max-width: 1081px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="imgs/mainbackground.webp" media="(min-width: 1082px)" fetchpriority="high" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" />
-  </noscript>
-  <script src="animation.js?v=<?= filemtime(__DIR__ . '/animation.js') ?>" defer></script>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/GothamHTF/GothamHTF-Bold.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="fonts/Raleway-latin.woff2" crossorigin />
+  <script src="site.js?v=<?= $v('site.js') ?>" defer></script>
 </head>
 
-<body style="margin: 0">
+<body>
+  <a class="skip-link" href="#quem-somos">Saltar para o conteúdo</a>
   <?php mae_demo_bar(); ?>
-  <div class="main-container">
-    <?php include __DIR__ . '/partials/hero.php'; ?>
+  <?php include __DIR__ . '/partials/hero.php'; ?>
 
-    <main class="produtos" id="quem-somos">
-      <h2 class="produtos-title">
-        <span class="title-anossa">a nossa</span><br>
-        <span class="title-colecao">colecção</span>
+  <main>
+    <section class="collection container" id="quem-somos" aria-labelledby="collection-title">
+      <h2 class="section-title" id="collection-title">
+        <span class="line-1">a nossa</span>
+        <span class="line-2">colecção</span>
       </h2>
-      <?php include __DIR__ . '/fetch_soaps.php'; ?>
-      <?php foreach ($soaps as $index => $soap): ?>
-        <div class="product-container <?= ($index === 1 || $index === 3) ? 'reverse' : '' ?>">
-          <img src="<?= htmlspecialchars($soap['image_url']) ?>" alt="<?= htmlspecialchars($soap['title']) ?>"
-            class="imgs-sabonete" width="900" height="677" loading="lazy" decoding="async">
-          <div class="product-text">
-            <h2 class="product-title"><?= htmlspecialchars($soap['title']) ?></h2>
-            <div class="product-info">
-              <p class="product-price"><strong><?= number_format($soap['price'], 2) ?>€</strong></p>
-              <p class="product-description"><?= htmlspecialchars($soap['description']) ?></p>
-            </div>
-            <p class="product-highlight"><?= htmlspecialchars($soap['highlight'] ?? '') ?></p>
-            <p class="product-ingredients">
-              <strong>Ingredientes:</strong> <?= htmlspecialchars($soap['ingredients'] ?? '') ?>
-            </p>
+      <?php foreach ($soaps as $soap): ?>
+        <?php $image = htmlspecialchars($soap['image_url']); ?>
+        <article class="soap">
+          <div class="soap-image">
+            <img src="<?= str_replace('.webp', '-480.webp', $image) ?>"
+              srcset="<?= str_replace('.webp', '-480.webp', $image) ?> 480w, <?= $image ?> 900w"
+              sizes="(min-width: 1020px) 470px, (min-width: 760px) 45vw, 90vw"
+              alt="<?= htmlspecialchars($soap['title']) ?>" width="900" height="677" loading="lazy" decoding="async" />
           </div>
-        </div>
+          <div class="soap-text">
+            <h3 class="soap-title"><?= htmlspecialchars($soap['title']) ?></h3>
+            <p class="soap-price"><?= number_format($soap['price'], 2) ?>€</p>
+            <p class="soap-description"><?= htmlspecialchars($soap['description']) ?></p>
+            <p class="soap-highlight"><?= htmlspecialchars($soap['highlight'] ?? '') ?></p>
+            <p class="soap-ingredients"><strong>Ingredientes:</strong> <?= htmlspecialchars($soap['ingredients'] ?? '') ?></p>
+          </div>
+        </article>
       <?php endforeach; ?>
-    </main>
-  </div>
+    </section>
 
-  <?php include __DIR__ . '/partials/kit.php'; ?>
-  <?php include __DIR__ . '/partials/novidades.php'; ?>
-  <?php include __DIR__ . '/partials/faqs.php'; ?>
+    <?php include __DIR__ . '/partials/kit.php'; ?>
+    <?php include __DIR__ . '/partials/novidades.php'; ?>
+    <?php include __DIR__ . '/partials/faqs.php'; ?>
+  </main>
+
   <?php include __DIR__ . '/partials/footer.php'; ?>
   <?php include __DIR__ . '/partials/contact-popup.php'; ?>
 </body>
